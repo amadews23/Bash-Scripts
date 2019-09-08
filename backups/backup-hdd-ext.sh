@@ -8,7 +8,7 @@ mount /dev/$disco $montaje;
 df | grep $disco | if [ `awk '{print $1}'` = "/dev/$disco" ] ;
 then
 echo `date`;
-rsync -rltDvu --modify-window=1 --progress --delete $origen $montaje/1/;
+rsync -rltDvu --modify-window=1 --progress --delete $origen $montaje/backup/;
 umount /dev/$disco;
 else 
 echo "no se ha montado unidad y no se ha realizado copia"
